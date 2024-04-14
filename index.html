@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <p>Book Catalog</p>
+    </header>
+
+    <div class="content">
+        <fieldset>
+            <legend>Add Book</legend>
+            <form id="myForm" action="" method="post">
+    
+                <label for="author">Author <span aria-label="required">*</span></label>
+                <input type="text" name="author" id="author" required>
+                
+                <label for="title">Book title <span aria-label="required">*</span></label>
+                <input type="text" name="title" id="title" required>
+        
+                <label for="pages">Number of Pages <span aria-label="required">*</span></label>
+                <input type="number" name="pages" id="pages" required>
+    
+                <fieldset class="radio">
+                    <legend>Did you enjoy the book?</legend>
+                    <div>
+                        <label for="read_yes">Yes</label>
+                        <input type="radio" id="read_yes" name="read" value="Yes" checked >
+                        <label for="read_no">No</label>
+                        <input type="radio" id="read_no" name="read" value="No" >
+                    </div>
+
+                </fieldset>
+    
+                <button class="form-submit" type="submit">Submit</button>
+        
+            </form>
+        </fieldset>
+
+        <div class="books-info">
+            <!-- <button class="restart">
+                <svg xmlns="http://www.w3.org/2000/svg" width= '1.5rem' height='1.5rem' viewBox="0 0 24 24"><path fill="currentColor" d="M12,4C14.1,4 16.1,4.8 17.6,6.3C20.7,9.4 20.7,14.5 17.6,17.6C15.8,19.5 13.3,20.2 10.9,19.9L11.4,17.9C13.1,18.1 14.9,17.5 16.2,16.2C18.5,13.9 18.5,10.1 16.2,7.7C15.1,6.6 13.5,6 12,6V10.6L7,5.6L12,0.6V4M6.3,17.6C3.7,15 3.3,11 5.1,7.9L6.6,9.4C5.5,11.6 5.9,14.4 7.8,16.2C8.3,16.7 8.9,17.1 9.6,17.4L9,19.4C8,19 7.1,18.4 6.3,17.6Z" /></svg>
+            </button> -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Author</th>
+                        <th>Title</th>
+                        <th>Pages</th>
+                        <th>Read</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr class="empty">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr> -->
+                    <!-- <tr>
+                        <td>J.R.R. Tolkien</td>
+                        <td>The Hobbit</td>
+                        <td>295</td>
+                        <td>Yes</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Austen</td>
+                        <td>Pride and Prejudice</td>
+                        <td>224</td>
+                        <td>Yes</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                      </tr>
+                    <tr>
+                        <td>Harper Lee</td>
+                        <td>To Kill a Mockingbird</td>
+                        <td>324</td>
+                        <td>No</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gabriel García Márquez</td>
+                        <td>One Hundred Years of Solitude</td>
+                        <td>472</td>
+                        <td>Yes</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>F. Scott Fitzgerald</td>
+                        <td>The Great Gatsby</td>
+                        <td>180</td>
+                        <td>No</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>George Orwell</td>
+                        <td>1984</td>
+                        <td>311</td>
+                        <td>No</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr> -->
+                    <!-- <tr>
+                        <td>Agatha Christie</td>
+                        <td>And Then There Were None</td>
+                        <td>64</td>
+                        <td>Yes</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mary Shelley</td>
+                        <td>Frankenstein</td>
+                        <td>211</td>
+                        <td>Yes</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr> -->
+                    <!-- <tr>
+                        <td>Harper Lee</td>
+                        <td>Go Set a Watchman</td>
+                        <td>352</td>
+                        <td>Yes</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>J.K. Rowling</td>
+                        <td>Harry Potter and the Sorcerer's Stone</td>
+                        <td>223</td>
+                        <td>No</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Khaled Hosseini</td>
+                        <td>The Kite Runner</td>
+                        <td>333</td>
+                        <td>No</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Margaret Atwood</td>
+                        <td>The Handmaid's Tale</td>
+                        <td>344</td>
+                        <td>No</td>
+                        <td>
+                            <button type="button" class="remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24"><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                            </button>
+                        </td>
+                    </tr> -->
+                </tbody>
+
+                
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>The Odin Project</p>
+    </footer>
+
+</body>
+</html>
