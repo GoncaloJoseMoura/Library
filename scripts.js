@@ -78,3 +78,11 @@ form.addEventListener('submit', (event) => {
     form.reset()
     }
 )
+
+const dialog = document.querySelector('dialog')
+dialog.addEventListener('click', (event) => {
+    console.log(event.target)
+    if (event.target.id == 'dialog-box') {
+        document.querySelector('dialog').close()
+    }
+})
