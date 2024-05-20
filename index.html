@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,28 @@
     <script src="./scripts.js" defer></script>
 
 </head>
+
 <body>
     <header>
-        
+
         <div class="logo">
-            <svg xmlns="http://wwwAdd.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24"><path fill="#BFB5AF" d="M19 2L14 6.5V17.5L19 13V2M6.5 5C4.55 5 2.45 5.4 1 6.5V21.16C1 21.41 1.25 21.66 1.5 21.66C1.6 21.66 1.65 21.59 1.75 21.59C3.1 20.94 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.81 22.25 21.56C22.35 21.61 22.4 21.59 22.5 21.59C22.75 21.59 23 21.34 23 21.09V6.5C22.4 6.05 21.75 5.75 21 5.5V19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V6.5C10.55 5.4 8.45 5 6.5 5Z" /></svg>
+            <svg xmlns="http://wwwAdd.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
+                <path fill="#BFB5AF"
+                    d="M19 2L14 6.5V17.5L19 13V2M6.5 5C4.55 5 2.45 5.4 1 6.5V21.16C1 21.41 1.25 21.66 1.5 21.66C1.6 21.66 1.65 21.59 1.75 21.59C3.1 20.94 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.81 22.25 21.56C22.35 21.61 22.4 21.59 22.5 21.59C22.75 21.59 23 21.34 23 21.09V6.5C22.4 6.05 21.75 5.75 21 5.5V19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V6.5C10.55 5.4 8.45 5 6.5 5Z" />
+            </svg>
             <p>Library</p>
         </div>
-        
+
 
         <button class="openModal" onclick="document.querySelector('dialog').showModal()">Add Book</button>
 
         <dialog id="dialog-box">
             <form action="">
 
-                <div class="dialog-legend">            
+                <div class="dialog-legend">
                     <p>Add New Book</p>
-                    <button onclick="document.querySelector('dialog').close()" type="button" formmethod="dialog">X</button>
+                    <button onclick="document.querySelector('dialog').close()" type="button"
+                        formmethod="dialog">X</button>
                 </div>
 
                 <ul>
@@ -40,7 +46,7 @@
                     </li>
                     <li>
                         <label for="pages">Pages</label>
-                        <input type="number" name="pages" id="pages" min="0" placeholder="294">
+                        <input type="number" name="pages" id="pages" min="0" placeholder="294" required>
                     </li>
                     <li>
                         <label for="read">Have You Read?</label>
@@ -51,7 +57,7 @@
                 <button class="entry" type="submit" formmethod="dialog">Submit</button>
 
             </form>
-            
+
         </dialog>
     </header>
 
@@ -61,6 +67,7 @@
         </div>
 
     </section>
-    
+
 </body>
+
 </html>
